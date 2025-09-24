@@ -6,9 +6,9 @@ Players = game:GetService("Players")
 
 
 local voids = {
-	Equipitem,
-	UnEquip,
-	buyItem,
+	Equipitem(),
+	UnEquip(),
+	buyItem(),
 }
 function Equipitem(name)
 	if Players.LocalPlayer.Backpack:WaitForChild(name,0.25) ~= nil then
