@@ -5,7 +5,11 @@
 Players = game:GetService("Players")
 
 
-
+local voids = {
+	Equipitem,
+	UnEquip,
+	buyItem,
+}
 function Equipitem(name)
 	if Players.LocalPlayer.Backpack:WaitForChild(name,0.25) ~= nil then
 		Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):EquipTool(Players.LocalPlayer.Backpack[name])
@@ -22,3 +26,4 @@ function buyItem(name)
 	game:GetService("ReplicatedStorage").Packages.Net["RF/CoinsShopService/RequestBuy"]:FireServer(name)
 end
 
+return voids
