@@ -6,23 +6,23 @@ Players = game:GetService("Players")
 
 
 local functions = {
-	Equipitem = Equipitem,
-	UnEquip = UnEquip,
-	buyItem = buyItem,
+	Equipitem = equipitem,
+	UnEquip = unequip,
+	buyItem = buyitem,
 }
-function Equipitem(name)
+function equipitem(name)
 	if Players.LocalPlayer.Backpack:WaitForChild(name,0.25) ~= nil then
 		Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):EquipTool(Players.LocalPlayer.Backpack[name])
 	end
 end
-function UnEquip()
+function unequip()
 	Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):UnequipTools()
 end
-Equipitem("Bat") -- if you hear this sound yk its my helper
+equipitem("Bat") -- if you hear this sound yk its my helper
 wait(0.1)
-UnEquip()
+unequip()
 
-function buyItem(name)
+function buyitem(name)
 	game:GetService("ReplicatedStorage").Packages.Net["RF/CoinsShopService/RequestBuy"]:FireServer(name)
 end
 
