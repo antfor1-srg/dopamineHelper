@@ -5,10 +5,10 @@
 Players = game:GetService("Players")
 
 
-local voids = {
-	Equipitem(),
-	UnEquip(),
-	buyItem()
+local functions = {
+	Equipitem = Equipitem,
+	UnEquip = UnEquip,
+	buyItem = buyItem,
 }
 function Equipitem(name)
 	if Players.LocalPlayer.Backpack:WaitForChild(name,0.25) ~= nil then
@@ -26,4 +26,4 @@ function buyItem(name)
 	game:GetService("ReplicatedStorage").Packages.Net["RF/CoinsShopService/RequestBuy"]:FireServer(name)
 end
 
-return voids
+return functions
